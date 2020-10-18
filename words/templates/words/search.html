@@ -1,0 +1,125 @@
+{% extends "words/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+<div class="title">
+<span class="title_letter" id="1_tl">M</span><span class="title_letter" id="2_tl">i</span><span class="title_letter" id="3_tl">n</span><span class="title_letter" id="4_tl">d</span><span class="gap"> </span><span class="title_letter" id="5_tl">T</span><span class="title_letter" id="6_tl">h</span><span class="title_letter" id="7_tl">e</span><span class="gap"></span>
+<span class="title_letter" id="8_tl">G</span><span class="title_letter" id="9_tl">a</span><span class="title_letter" id="10_tl">p</span>
+</div>
+
+
+<div id="main">
+    <div class="header" id="about">About</div>
+    <div class="header" id="play"> Play</div><br>
+
+    <div id="about_info" class="phrases"  style="display:none; visibility:hidden"><br><br>
+        <p id="phrase_1">The phrase "Mind the gap" has its origins in the United Kingdom in 1968 as a visual and audio cue warning passangers boarding trains to watch the gap
+between the platform and the train.</p>
+        <p id="phrase_2">Our game, "Mind the gap" is a "fill in the gap" semantic game, requiring quick thinking, a large vocabulary and the ability to
+make word connections and fill in letter gaps correctly.</p>
+        <p id="phrase_3">On entering a word (e.g. baby), a definition (e.g. a nutritional substance produced by mammals) of a related word (e.g. milk) is provided.
+            Your task is to guess the correct related word. A correct word will earn you more time!, while an incorrect letter entered into "the gap" will simply result in an incorrect word response.
+        </p>
+<p id="phrase_4">Use all provided tools: definitions,  hints and your innate guessing ability to correctly guess 10 words and color the game phrase "Mind the Gap," all BEFORE the Timer runs out!
+Remember above all...</p><p id="phrase_5">Mind, the Gap</p>
+    </div>
+    <div id="win_info" style="display:none"><p><strong>Congratulations</strong></p>You have demonstrated great perseverance and caution in completing the task assigned.</div>
+    <div id="loss_info" style="display:none">Sorry, you ran out of time. Good try though. Give it another shot?</div>
+    <div class="timer_n_word_entry">
+    <div id="chosen_word_format"><div class="chosen_word"></div></div>
+    <div id="word_entry" name="word_entry">
+        <form id="compose_word">
+            <h5 class="gen_text" id="gen_text_search">Enter Word</h5>
+            {% csrf_token %}
+            <div id="input_entry">
+            <input type="text" name="word" placeholder="search word" id="user_word" class="user_input">
+            <input type="submit" id="submit" class="user_input" name="submit">
+            </div>
+        </form><br>
+    </div>
+    <div class="timer" style="display:none">
+        <div class="timer_location">
+        <svg class="timer_svg">
+            <g class="timer_circle">
+                <circle class="timer_elapsed" cx="75" cy="65" r="55" />
+                <path id="timer_path_left" stroke-dasharray="345 345"
+                      class="timer_path_left"
+                d="M 25, 70
+                a 55 55 0 1, 0 110, 0
+                a 55 55 0 1, 0 -110, 0"></path>
+
+            </g>
+        </svg>
+        <span id="timer_label" class="timer_label">1:00</span>
+        </div>
+    </div>
+    </div>
+
+
+    <div id="word_guess" name="word_guess" style="display:none">
+        <span>
+        <h5 class="gen_text" id="def_text">Definition:</h5>
+        <div id="definition"></div>
+        </span>
+        <div id="info"></div>
+        <div class="gen_text">What is:
+            <span id="boxes"></span>
+        </div>
+        <br>
+        <br>
+    </div>
+
+
+    <div id="hint_guess_next_buttons" style="display:none">
+        <div class="button_row">
+        <button id="hint_button">Hint</button>
+        <button id="guess_button">Guess</button>
+        <button id="next_button">Next</button>
+        </div>
+    </div>
+
+    <div id="synonym"></div><br>
+    <div id="virtual_keyboard" style="display:none">
+        <div id="keyboard_pos">
+            <div id="row1" class="letter_row">
+                <input type="button" name="q" id="q" class="single_letter" value="q" />
+                <input type="button" name="w" id="w" class="single_letter" value="w" />
+                <input type="button" name="e" id="e" class="single_letter" value="e" />
+                <input type="button" name="r" id="r" class="single_letter" value="r" />
+                <input type="button" name="t" id="t" class="single_letter" value="t" />
+                <input type="button" name="y" id="y" class="single_letter" value="y" />
+                <input type="button" name="u" id="u" class="single_letter" value="u" />
+                <input type="button" name="i" id="i" class="single_letter" value="i" />
+                <input type="button" name="o" id="o" class="single_letter" value="o" />
+                <input type="button" name="p" id="p" class="single_letter" value="p" />
+            </div>
+            <div id="row2" class="letter_row">
+                <input type="button" name="a" id="a" class="single_letter" value="a" />
+                <input type="button" name="s" id="s" class="single_letter" value="s" />
+                <input type="button" name="d" id="d" class="single_letter" value="d" />
+                <input type="button" name="f" id="f" class="single_letter" value="f" />
+                <input type="button" name="g" id="g" class="single_letter" value="g" />
+                <input type="button" name="h" id="h" class="single_letter" value="h" />
+                <input type="button" name="j" id="j" class="single_letter" value="j" />
+                <input type="button" name="k" id="k" class="single_letter" value="k" />
+                <input type="button" name="l" id="l" class="single_letter" value="l" />
+            </div>
+            <div id="row3" class="letter_row">
+                <input type="button" name="z" id="z" class="single_letter" value="z" />
+                <input type="button" name="x" id="x" class="single_letter" value="x" />
+                <input type="button" name="c" id="c" class="single_letter" value="c" />
+                <input type="button" name="v" id="v" class="single_letter" value="v" />
+                <input type="button" name="b" id="b" class="single_letter" value="b" />
+                <input type="button" name="n" id="n" class="single_letter" value="n" />
+                <input type="button" name="m" id="m" class="single_letter" value="m" />
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+    <script src ="{% static 'words/input.js' %}"></script>
+{% endblock %}

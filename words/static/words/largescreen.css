@@ -1,0 +1,304 @@
+/*General Layout*/
+#main{
+margin: auto;
+width: 70%;
+background-color: #ffe9c4;
+padding: 10px;
+border-radius: 25px;
+}
+
+/*header section*/
+/*----------------------------*/
+.header:hover{
+background-color: #91897a;
+border-radius: 8px;
+}
+
+.header{
+float:left;
+width: 8%;
+text-align: center;
+background-color: #d4d4d4;
+border-radius: 7px;
+margin-left:0.5em;
+}
+@media (max-width: 1100px){.header {width: 10%;}}
+
+/*Keyboard*/
+/*----------------------------*/
+#virtual_keyboard{
+position: relative;
+height: 150px;
+width: 50%;
+margin: auto;
+border: 2px solid black;
+border-radius: 10px;
+white-space: nowrap;
+background-color: #91897a;
+}
+
+@media (max-width: 1100px){#virtual_keyboard {width: 70%;}}
+@media (max-width: 790px){#virtual_keyboard {width: 90%;}}
+
+#keyboard_pos{
+position: relative;
+margin: auto;
+margin-left:5%;
+margin-right:5%;
+height: 125px;
+width: auto;
+}
+
+#row1{
+position: absolute;
+bottom: 70%;
+}
+
+#row2{
+position: absolute;
+left: 10px;
+bottom: 40%;
+}
+
+#row3{
+position: absolute;
+left: 20px;
+bottom: 10%;
+}
+
+.single_letter{
+padding: 3px 9px;
+border-radius: 7px;
+}
+
+/*Buttons*/
+/*--------------------------------------*/
+#hint_guess_next_buttons{
+margin: auto;
+width: 60%;
+justify-content: center;
+align-items:center;
+}
+
+@media (max-width: 1100px){#hint_guess_next_buttons {width: 80%;}}
+
+#hint_button, #guess_button, #next_button {
+box-shadow: 0px 0px 0px 2px #9fb4f2;
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+	border-radius: 3px;
+	border:1px solid #4e6096;
+	margin: auto;
+	width: 26%;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size: 13px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+	text-align: center;
+}
+
+.button_row{
+margin: auto;
+width: 50%;
+padding-left:8%
+}
+
+#hint_button:hover, #guess_button:hover, #next_button:hover{
+background:linear-gradient(to bottom, #1c4c80 5%, #1c4c80 100%);
+background-color:#1c4c80;
+}
+
+.button_row{
+margin: auto;
+}
+
+/*general text/user input*/
+/*---------------------------------------------*/
+#word_entry{
+margin-left: auto;
+margin-right: auto;
+width: 60%;
+}
+
+#input_entry{
+margin: auto;
+width: 80%
+}
+
+@media (max-width: 1173px){#input_entry {position:relative; justify-content: center;}}
+
+#submit{
+position:relative;
+align-items:center;
+justify-content: center;
+}
+
+@media (max-width: 1173px){#submit {left:25%;}}
+@media (max-width: 850px){#submit {left:40%;}}
+
+#about_info{
+font-family: Apple Chancery, cursive
+}
+
+#win_info, #loss_info{
+text-align: center;
+}
+
+.title{
+font-size: 50px;
+text-align: center;
+color: white;
+font-family: cursive, Helvetica, sans-serif;
+-webkit-text-stroke-width: 2px;
+-webkit-text-stroke-color: black;
+}
+
+#synonym{
+width: 50%;
+margin: auto;
+text-align: center;
+}
+
+.gen_text, #definition, #info {
+margin: auto;
+width:80%
+font-size: 15px;
+text-align: center;
+}
+
+#chosen_word_format{
+font-weight: bold;
+margin-left: 7%;
+display: grid;
+grid-template-rows: 1fr, 1fr;
+}
+
+.chosen_word{
+padding-top:10px;
+text-transform: capitalize;
+text-decoration:underline;
+}
+
+/*About section animation*/
+/*------------------------------------------------------------*/
+@keyframes grow{
+0%{font-size: 50px}
+25%{font-size: 40px}
+50%{font-size: 80px}
+100%{font-size: 50px}
+}
+
+.title{
+animation-name: grow;
+animation-duration: 2.5s;
+animation-fill-mode: forwards;
+}
+
+@keyframes view {
+0%{
+opacity: 0
+}
+50%{opacity:0.75}
+100%{opacity=1;
+visibility: visible;
+}
+}
+
+#phrase_1{
+animation-name: view;
+animation-duration: 3s;
+animation-delay: 0;
+animation-fill-mode: forwards;
+}
+
+#phrase_2{
+animation-name: view;
+animation-duration: 3s;
+animation-delay: 3s;
+animation-fill-mode: forwards;
+}
+
+#phrase_3{
+animation-name: view;
+animation-duration: 3s;
+animation-delay: 5s;
+animation-fill-mode: forwards;
+}
+
+#phrase_4{
+animation-name: view;
+animation-duration: 3s;
+animation-delay: 9s;
+animation-fill-mode: forwards;
+}
+
+#phrase_5{
+animation-name: view;
+animation-duration: 3s;
+animation-delay: 12s;
+animation-fill-mode: forwards;
+}
+
+/*Timer*/
+/*------------------------------*/
+.timer_n_word_entry{
+display: grid;
+grid-template-columns: 1fr 4fr 1fr;
+}
+
+.timer{
+position: relative;
+margin-right: 50%;
+left: 60%;
+height:200px;
+}
+
+.timer_location{
+display: flex;
+justify-content: center;
+align-items:center;
+position: absolute;
+right: 0px;
+width: 150px;
+height: 150px;
+}
+
+.timer_svg{
+position: absolute;
+right: 0px;
+width: 160px;
+height: 130px;
+transform: scaleX(-1);
+}
+
+.timer_circle{
+stroke; none;
+}
+
+.timer_elapsed{
+stroke-width: 15px;
+stroke: #ff4f03;
+fill: none;
+}
+
+.timer_label{
+font-size: 25px;
+text-align: center;
+}
+
+.timer_path_left{
+display: block;
+stroke-width: 15px;
+stroke: #91897a;
+stroke-linecap: round;
+fill: none;
+transform: rotate(90deg);
+transform-origin: center;
+transition: 1s linear all;
+}
+
+@media (max-width: 800px){.timer_path_left {visibility:hidden;}}
+@media (max-width: 800px){.timer_elapsed {visibility:hidden;}}
+@media (max-width: 800px){.timer_label {position: relative; left:25%;bottom:33%;font-size: 20px;}}

@@ -1,0 +1,325 @@
+/*General Layout*/
+#main{
+margin: auto;
+width: 70%;
+background-color: #ffe9c4;
+padding: 10px;
+border-radius: 25px;
+}
+
+/*header section*/
+/*----------------------------*/
+.header:hover{
+background-color: #91897a;
+border-radius: 8px;
+}
+
+.header{
+float:left;
+width: 15%;
+text-align: center;
+background-color: #d4d4d4;
+border-radius: 3px;
+font-size: 12px;
+margin-left:5px;
+}
+
+/*Keyboard*/
+/*----------------------------*/
+#virtual_keyboard{
+position: relative;
+height: 90px;
+width: 90%;
+border: 2px solid black;
+border-radius: 10px;
+white-space: nowrap;
+background-color: #91897a;
+}
+
+#keyboard_pos{
+position: relative;
+margin: auto;
+margin-left: 3%;
+height: 90px;
+width: auto;
+}
+
+#row1{
+position: absolute;
+bottom: 59%;
+white-space: nowrap;
+width: auto;
+}
+
+#row2{
+position: absolute;
+left: 3px;
+bottom: 37%;
+width: auto;
+}
+
+#row3{
+position: absolute;
+left: 7px;
+bottom: 15%;
+width: auto;
+}
+
+.single_letter{
+font-size: 7px;
+float:left;
+border-radius: 3px;
+width: 0.5em;
+height: auto;
+justify-content: center;
+align-items:center;
+}
+
+/*Buttons*/
+/*--------------------------------------*/
+#hint_guess_next_buttons{
+margin: auto;
+width: 80%;
+justify-content: center;
+align-items:center;
+}
+
+#hint_button, #guess_button, #next_button {
+box-shadow: 0px 0px 0px 2px #9fb4f2;
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+	border-radius: 3px;
+	border:1px solid #4e6096;
+	margin: auto;
+	width: 30%;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size: 11px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+	text-align: center;
+}
+
+.button_row{
+margin: auto;
+width: 100%;
+padding-left:8%
+}
+
+#hint_button:hover, #guess_button:hover, #next_button:hover{
+background:linear-gradient(to bottom, #1c4c80 5%, #1c4c80 100%);
+background-color:#1c4c80;
+}
+
+.button_row{
+margin: auto;
+}
+
+/*general text/user input*/
+/*---------------------------------------------*/
+#word_entry{
+margin-left: auto;
+margin-right: auto;
+width: 70%;
+}
+
+#input_entry{
+margin: auto;
+width: 100%
+height: 15px;
+}
+
+#user_word{
+width: 100%;
+font-size: 10px;
+}
+
+#submit {
+position:relative;
+width: 50%;
+height:20px;
+left: 25%;
+font-size: 10px;
+align-items:center;
+justify-content: center;
+}
+
+#about_info{
+font-family: Apple Chancery, cursive
+}
+
+#win_info, #loss_info{
+text-align: center;
+}
+
+.title{
+text-align: center;
+color: white;
+font-family: cursive, Helvetica, sans-serif;
+-webkit-text-stroke-width: 2px;
+-webkit-text-stroke-color: black;
+}
+
+.title_letter{
+font-size: 30px;
+}
+
+#synonym{
+width: 50%;
+margin: auto;
+text-align: center;
+font-size: 12px;
+}
+
+.gen_text, #definition, #info {
+margin: auto;
+width:80%;
+font-size: 12px;
+text-align: center;
+}
+
+#gen_text_search{
+font-size: 14px;
+}
+
+.chosen_word{
+font-size:10px;
+margin-left: 7%;
+margin-top: 15%;
+text-transform: capitalize;
+text-decoration: underline;
+}
+
+.chosen_word::before {
+font-weight: bold;
+font-size:10px;
+}
+
+/*About section animation*/
+/*------------------------------------------------------------*/
+@keyframes grow{
+0%{font-size: 50px}
+25%{font-size: 40px}
+50%{font-size: 80px}
+100%{font-size: 50px}
+}
+
+.title{
+animation-name: grow;
+animation-duration: 2.5s;
+animation-fill-mode: forwards;
+}
+
+@keyframes view {
+0%{
+opacity: 0
+}
+
+50%{opacity:0.75}
+100%{opacity=1;
+visibility: visible;
+}
+}
+
+#phrase_1{
+animation-name: view;
+animation-duration: 3s;
+animation-delay: 0;
+animation-fill-mode: forwards;
+}
+
+#phrase_2{
+animation-name: view;
+animation-duration: 3s;
+animation-delay: 3s;
+animation-fill-mode: forwards;
+}
+
+#phrase_3{
+animation-name: view;
+animation-duration: 3s;
+animation-delay: 5s;
+animation-fill-mode: forwards;
+}
+
+#phrase_4{
+animation-name: view;
+animation-duration: 3s;
+animation-delay: 9s;
+animation-fill-mode: forwards;
+}
+
+#phrase_5{
+animation-name: view;
+animation-duration: 3s;
+animation-delay: 12s;
+animation-fill-mode: forwards;
+}
+
+/*Timer*/
+/*------------------------------*/
+.timer_n_word_entry{
+display: grid;
+grid-template-columns: 1fr 5fr 1fr;
+}
+
+.timer{
+position: relative;
+margin-right: 50%;
+left: 60%;
+height:200px;
+}
+
+.timer_location{
+display: flex;
+position: absolute;
+right: 0px;
+width: 150px;
+height: 150px;
+}
+
+.timer_svg{
+position: absolute;
+right: 0px;
+width: 160px;
+height: 130px;
+transform: scaleX(-1);
+}
+
+.timer_circle{
+stroke; none;
+}
+
+.timer_label{
+position: relative;
+left:35%;
+bottom:35%;
+font-size: 12px;
+}
+
+#timer_neighbor{
+background-color: green;
+}
+
+.timer_elapsed{
+stroke-width: 5px;
+stroke: #ff4f03;
+fill: none;
+cx: 28;
+cy: 30;
+r=18;
+visibility: hidden;
+}
+
+.timer_path_left{
+display: block;
+stroke-width: 5px;
+stroke: #91897a;
+stroke-linecap: round;
+fill: none;
+transform: rotate(90deg);
+transform-origin: center;
+transition: 1s linear all;
+visibility:hidden;
+}
